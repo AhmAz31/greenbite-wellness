@@ -82,7 +82,7 @@ nav {
   align-items: center;
   min-height: 80vh;
   padding: 120px 20px;
-  background: url("images/background1.jpg") no-repeat center center/cover;
+  background: url("Images/background1.jpg") no-repeat center center/cover;
   position: relative;
   color: #fff;
 }
@@ -376,4 +376,5 @@ nav {
   .footer {
     padding: 30px 5%;
   }
+
 }
