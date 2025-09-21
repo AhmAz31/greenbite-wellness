@@ -1,0 +1,354 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: url('Images/Nutri.jpg');
+  background-size: cover;
+  position: relative;
+  color: #1a3d2f;
+  line-height: 1.6;
+  opacity: 0;
+  transition: all 1s ease;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(3, 3, 3, 0.434); /* adjust transparency */
+  z-index: -1;
+}
+body.fade {
+  opacity: 0;
+}
+
+body.loaded {
+  opacity: 1;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between; /* logo left, links right */
+  align-items: center;
+  background: rgba(255,255,255,0.9);
+  padding: 18px 400px 18px 50px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.nav-logo a {
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2a6a4f;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #1a3d2f;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #2a6a4f;
+}
+
+/* Calculator Section */
+.calculator {
+  max-width: 1100px;
+  margin: 50px auto;
+  background-color: white;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+/* Make sure form and results sit above the overlay */
+.calc-container {
+  z-index: 1;
+}
+
+/* ✅ Side by side layout */
+.calc-container {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.g{
+  margin-top: 50px;
+  margin-left: 500px;
+  color: #fcfcfc;
+  font-size: 2.1rem;
+}
+
+/* Form */
+.calc-form {
+  flex: 1;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+button.btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: #2a6a4f;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+button.btn:hover {
+  background: #1f4d38;
+}
+
+/* Results */
+.results {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.result-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+.result-box h3 {
+  font-size: 1rem;
+  color: #2a6a4f;
+  margin-bottom: 8px;
+}
+
+.result-box p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1a3d2f;
+}
+
+/* Footer */
+.footer {
+  background: #1a3d2f;
+  color: white;
+  padding: 50px 10%;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.footer-newsletter,
+.footer-contact {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-contact {
+  margin-left: 200px;
+}
+
+.footer-links {
+  margin-left: 100px;
+}
+
+.footer h3 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  color: white;
+}
+
+.footer p, .footer a {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.footer a:hover {
+  color: grey;
+}
+
+.footer-newsletter form {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.footer-newsletter input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.footer-newsletter button {
+  background: #ffd700;
+  color: #1a3d2f;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.footer-newsletter button:hover {
+  background: #e6c200;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+  .calc-container {
+    flex-direction: column;
+  }
+  .results {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* Hamburger menu (mobile) */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Mobile navbar */
+@media(max-width: 900px) {
+  nav {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 15px 20px;
+    position: relative;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(255,255,255,0.95);
+    position: absolute;
+    top: 60px; /* below navbar */
+    right: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    gap: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* Calculator layout adjustments for mobile */
+  .calc-container {
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .results {
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .g {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+/* ============= FOOTER FIX ============= */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-contact,
+.footer-links {
+  margin-left: 0 !important; /* override fixed margins */
+}
+
+@media(max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+}

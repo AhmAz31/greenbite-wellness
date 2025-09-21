@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenBite | Calorie & Nutrition Calculator</title>
+  <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+  <!-- Navbar -->
+<nav>
+  <div class="nav-logo"><a href="index.html">GreenBite</a></div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="recipes.html">Recipes</a></li>
+    <li><a href="calculator.html">Calorie Calculator</a></li>
+    <li><a href="workout.html">Workout Generator</a></li>
+    <li><a href="mindfulness.html">Mindfulness</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="hamburger">☰</div>
+</nav>
+
+  <!-- Calculator Section -->
+  <h1 class="g">Calorie & Nutrition Calculator</h1>
+  <section class="calculator">
+    <div class="calc-container">
+      <!-- Form -->
+      <form id="calcForm" class="calc-form">
+        <div class="form-group">
+          <label for="age">Age (years)</label>
+          <input type="number" id="age" min="1" required>
+        </div>
+
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select id="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="height">Height (cm)</label>
+          <input type="number" id="height" min="1" required>
+        </div>
+
+        <div class="form-group">
+          <label for="weight">Weight (kg)</label>
+          <input type="number" id="weight" min="1" required>
+        </div>
+
+        <div class="form-group">
+          <label for="activity">Activity Level</label>
+          <select id="activity" required>
+            <option value="1.2">Sedentary</option>
+            <option value="1.375">Lightly active</option>
+            <option value="1.55">Moderately active</option>
+            <option value="1.725">Very active</option>
+            <option value="1.9">Super active</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn">Calculate</button>
+      </form>
+
+      <!-- Results -->
+      <div class="results" id="results">
+        <div class="result-box">
+          <h3>BMR</h3>
+          <p><span id="bmrValue"></span> kcal/day</p>
+        </div>
+        <div class="result-box">
+          <h3>TDEE</h3>
+          <p><span id="tdeeValue"></span> kcal/day</p>
+        </div>
+        <div class="result-box">
+          <h3>Carbs</h3>
+          <p><span id="carbsValue"></span> g</p>
+        </div>
+        <div class="result-box">
+          <h3>Protein</h3>
+          <p><span id="proteinValue"></span> g</p>
+        </div>
+        <div class="result-box">
+          <h3>Fat</h3>
+          <p><span id="fatValue"></span> g</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer reveal">
+    <div class="footer-container">
+      <div class="footer-newsletter">
+        <h3>Stay Updated</h3>
+        <p>Subscribe to our newsletter for healthy tips and recipes.</p>
+        <form>
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <p><a href="index.html">Home</a></p>
+          <p><a href="recipes.html">Recipes</a></p>
+          <p><a href="calculator.html">Calorie & Nutrition Calculator</a></p>
+          <p><a href="workout.html">Workout Generator</a></p>
+          <p><a href="mindfulness.html">Mindfulness & Meditation</a></p>
+          <p><a href="contact.html">Conatct & Feedback</a></p>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p>📍 123 Green Street, Colombo, Sri Lanka</p>
+        <p>📞 +94 77 123 4567</p>
+        <p>📧 hello@greenbite.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 GreenBite. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="calculator.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenBite - Healthy Recipes</title>
+  <link rel="stylesheet" href="recipes.css">
+  <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
+</head>
+<body>
+  <!-- Navbar -->
+<nav>
+  <div class="nav-logo"><a href="index.html">GreenBite</a></div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="recipes.html">Recipes</a></li>
+    <li><a href="calculator.html">Calorie Calculator</a></li>
+    <li><a href="workout.html">Workout Generator</a></li>
+    <li><a href="mindfulness.html">Mindfulness</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="hamburger">☰</div>
+</nav>
+
+  <!-- Page Content -->
+  <main class="recipes-page">
+      <h1 class="g">Healthy Recipes</h1>
+      
+      <!-- Search / Filter -->
+    <div class="filters">
+      <div class="search-box">
+        <input type="text" id="search" placeholder="🔍 Search recipes...">
+      </div>
+        <div class="category-box">
+          <select id="categoryFilter">
+            <option value="all">🍽️ All Categories</option>
+            <option value="Breakfast">🌅 Breakfast</option>
+            <option value="Lunch">🌞 Lunch</option>
+            <option value="Dinner">🌙 Dinner</option>
+            <option value="Snack">🥗 Snack</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Recipe Cards Container -->
+      <div class="recipe-cards" id="recipeCards"></div>
+  </main>
+
+  <!-- Recipe Modal -->
+  <div id="recipeModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <img id="modalImage" src="" alt="" />
+      <h3>Ingredients</h3>
+      <ul id="modalIngredients"></ul>
+      <h3>Steps</h3>
+      <ol id="modalSteps"></ol>
+      <h3>Nutrition Info</h3>
+      <table id="modalNutrition">
+        <tr>
+          <th>Type</th>
+          <th>Amount</th>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer reveal">
+    <div class="footer-container">
+      
+      <!-- Newsletter -->
+      <div class="footer-newsletter">
+        <h3>Stay Updated</h3>
+        <p>Subscribe to our newsletter for healthy tips and recipes.</p>
+        <form>
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+  
+      <!-- Help Links -->
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <p><a href="index.html">Home</a></p>
+          <p><a href="recipes.html">Recipes</a></p>
+          <p><a href="calculator.html">Calorie & Nutrition Calculator</a></p>
+          <p><a href="workout.html">Workout Generator</a></p>
+          <p><a href="mindfulness.html">Mindfulness & Meditation</a></p>
+          <p><a href="contact.html">Conatct & Feedback</a></p>
+        <p><a href="#">FAQs</a></p>
+      </div>
+  
+      <!-- Contact Info -->
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p>📍 123 Green Street, Colombo, Sri Lanka</p>
+        <p>📞 +94 77 123 4567</p>
+        <p>📧 hello@greenbite.com</p>
+      </div>
+  
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 GreenBite. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="recipes.js"></script>
+</body>
+</html>

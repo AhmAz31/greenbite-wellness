@@ -1,0 +1,393 @@
+/* ===================== WORKOUT PAGE CSS ===================== */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body & background */
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+    color: #1a3d2f;
+    background: url('Images/workout.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    opacity: 0;
+    transition: all 1s ease;
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(3, 3, 3, 0.675);
+    z-index: -1;
+  }
+  body.fade {
+    opacity: 0;
+  }
+  
+  body.loaded {
+    opacity: 1;
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+  }
+  
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  } 
+  /* ===================== NAVBAR ===================== */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.9);
+    padding: 18px 400px 18px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  
+  .nav-logo a {
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2a6a4f;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #1a3d2f;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #2a6a4f;
+  }
+  
+  /* Hamburger menu (hidden by default) */
+  .hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  /* ===================== PAGE TITLE ===================== */
+  .workout-generator {
+    max-width: 900px;
+    margin: -25px auto 80px auto;
+    padding: 20px;
+    min-height: calc(100vh - 120px); /* navbar + footer height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .workout-generator h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fcfcfc;
+  }
+  
+  .g {
+    color: #fcfcfc !important;
+    font-size: 2.2rem !important;
+  }
+  
+  /* ===================== WORKOUT CARD ===================== */
+  .workout-card {
+    background-color: #fcfcfc;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    display: flex;
+    gap: 30px;
+    flex-wrap: nowrap;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .workout-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255, 255, 255, 0.273);
+    border-radius: 20px;
+    z-index: 0;
+  }
+  
+  /* Form & results above overlay */
+  .workout-form,
+  .workout-results {
+    flex: 1;
+    min-width: 280px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Form labels & inputs */
+  .workout-form label {
+    font-weight: 600;
+    color: #1a3d2f;
+  }
+  
+  .workout-form select,
+  .workout-form input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+    margin-bottom: 12px;
+    transition: all 0.3s;
+  }
+  
+  .workout-form select:focus,
+  .workout-form input:focus {
+    border-color: #2a6a4f;
+    box-shadow: 0 0 5px rgba(42,106,79,0.3);
+  }
+  
+  /* Buttons */
+  .workout-form .btn,
+  .start-btn,
+  .stop-btn {
+    padding: 12px 25px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .workout-form .btn,
+  .start-btn {
+    background: #2a6a4f;
+    color: white;
+  }
+  
+  .workout-form .btn:hover,
+  .start-btn:hover {
+    background: #1f4d38;
+  }
+  
+  .stop-btn {
+    background: #d9534f;
+    color: white;
+  }
+  
+  .stop-btn:hover {
+    background: #b52b23;
+  }
+  
+  /* ===================== WORKOUT RESULTS ===================== */
+  .workout-results {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Individual exercise cards */
+  .exercise-card {
+    background: #f1f9f5;
+    padding: 12px 18px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  }
+  
+  .exercise-card h3 {
+    font-size: 1.1rem;
+    color: #2a6a4f;
+    margin: 0;
+  }
+  
+  .timer {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #333;
+    min-width: 60px;
+    text-align: center;
+  }
+  
+  /* ===================== FOOTER ===================== */
+  .footer {
+    background: #1a3d2f;
+    color: white;
+    padding: 50px 10%;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  
+  .footer-newsletter,
+  .footer-contact,
+  .footer-links {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .footer h3 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    color: white;
+  }
+  
+  .footer p, .footer a {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #ddd;
+  }
+  
+  .footer a:hover {
+    color: grey;
+  }
+  
+  .footer-newsletter form {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .footer-newsletter input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+  }
+  
+  .footer-newsletter button {
+    background: #ffd700;
+    color: #1a3d2f;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  
+  .footer-newsletter button:hover {
+    background: #e6c200;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    font-size: 0.85rem;
+    color: #aaa;
+  }
+  
+  /* ============= FOOTER FIX ============= */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  
+  .footer-contact,
+  .footer-links {
+    margin-left: 0 !important; /* override fixed margins */
+  }
+  
+  @media(max-width: 900px) {
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+    }
+  }
+  
+  /* Responsive */
+  @media(max-width:768px){
+    nav ul {
+      display:none;
+      flex-direction: column;
+      background: rgba(255,255,255,0.95);
+      position: absolute;
+      top:60px;
+      right:20px;
+      padding:15px;
+      border-radius:8px;
+    }
+  
+    nav ul.show {
+      display:flex;
+    }
+  
+    .hamburger {
+      display:block;
+    }
+  
+    .recipes-page {
+      padding: 40px 5%;
+    }
+  }
+  
+  @media(max-width:768px){
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background: rgba(255,255,255,0.95);
+      position: absolute;
+      top: 70px; /* just below navbar */
+      right: 20px;
+      width: 200px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      gap: 15px;
+    }
+  
+    .nav-links.show {
+      display: flex;
+    }
+  
+    .nav-links li a {
+      font-size: 1.1rem;
+    }
+  
+    .hamburger {
+      display: block;
+      cursor: pointer;
+    }
+  
+    nav {
+      padding: 18px 20px; /* reduce side padding on mobile */
+    }
+  }
+  
