@@ -21,7 +21,7 @@ const recipes = [
   {
     name: "Grilled Salmon with Veggies",
     category: "Dinner",
-    image: "images/juice.jpg",
+    image: "Images/salmon.jpg",
     description: "Omega-3 rich salmon served with roasted vegetables.",
     ingredients: ["1 salmon fillet", "1 cup broccoli", "1 cup carrots", "1 tbsp olive oil", "Salt & pepper"],
     steps: ["Season salmon with salt, pepper, olive oil.", "Grill salmon 3–4 minutes per side.", "Roast broccoli and carrots for 15 mins.", "Serve together."],
@@ -153,5 +153,6 @@ function revealOnScroll() {
 }
 
 window.addEventListener("scroll", revealOnScroll);
+
 
 
